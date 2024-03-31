@@ -156,14 +156,14 @@ jobs:
           echo "app-id=$APPID" >> $GITHUB_OUTPUT ;
           echo "app-version=$APPVERSION" >> $GITHUB_OUTPUT ;
 
-      - name: Submit application bundle
-        id: bundle-submit
-        if: needs.process-manifests.outputs.checks-only != 'true'
-        run: |
-          curl --fail-with-body \
-            -H "Authorization: Bearer ${{ secrets.FAST_AUTH_TOKEN }}" \
-            -F "bundle=@${{ steps.get-bundle-path.outputs.path }}" \
-            ${{ env.ARCHIVARIUS_URL }}/api/v0/application/version/bundle
+      #- name: Submit application bundle
+      #  id: bundle-submit
+      #  if: needs.process-manifests.outputs.checks-only != 'true'
+      #  run: |
+      #    curl --fail-with-body \
+      #      -H "Authorization: Bearer ${{ secrets.FAST_AUTH_TOKEN }}" \
+      #      -F "bundle=@${{ steps.get-bundle-path.outputs.path }}" \
+      #      ${{ env.ARCHIVARIUS_URL }}/api/v0/application/version/bundle
 
       - name: Check if version exists
         if: needs.process-manifests.outputs.checks-only == 'true' && steps.app-bundle.outputs.bundle-path != ''
