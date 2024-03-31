@@ -4,7 +4,7 @@ sourcecode:
     origin: https://github.com/coopeeo/secret_toggle.git
     commit_sha: 021507abbd05c8e690d9e08515db52f756e9187e
 description: "@README.md"
-changelog: "v1.0 - Initial release"
+changelog: "v1 - Initial release"
 author: "@nostrumuva"
 screenshots:
   - "screenshot.png"
