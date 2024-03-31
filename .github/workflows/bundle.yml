@@ -167,6 +167,7 @@ jobs:
           ${{ env.ARCHIVARIUS_URL }}/api/v0/application/version/bundle
 
       - name: Check if version exists
+        continue-on-error: true
         if: needs.process-manifests.outputs.checks-only == 'true' && steps.app-bundle.outputs.bundle-path != ''
         run: |
           VER_HTTP_CODE=$( curl -sw '%{http_code}' -o /dev/null \
