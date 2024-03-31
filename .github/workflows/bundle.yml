@@ -34,7 +34,7 @@ jobs:
       - name: JSONify changes
         id: set-json-output
         run: |
-          if [ "${{ github.event_name }}" != "push" ] ; then
+          if [ "${{ github.event_name }}" = "push" ] ; then
             echo checks-only=true >> $GITHUB_OUTPUT ;
           fi ;
           echo all-changed-files=$(echo "${{ steps.changed-files.outputs.all_changed_files }}" | jq -R -c 'split(" ")' ) >> $GITHUB_OUTPUT ;
