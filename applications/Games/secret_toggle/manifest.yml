@@ -1,7 +1,7 @@
 sourcecode:
   type: git
   location:
-    origin: https://github.com/nostrumuva/secret_toggle.git
+    origin: https://github.com/coopeeo/secret_toggle.git
     commit_sha: 82f7532c5f4df295d68adaa1ee4201f1bd403028
 description: "@README.md"
 changelog: "v1 - Initial release"
